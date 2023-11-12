@@ -81,14 +81,13 @@
       <i>:</i>
       <span id="scond">20</span>
     </p>
-    <p class="tips">12月24日生日</p>
+    <p class="tips">2023年12月24日生日</p>
   </div>
   <script>
     const next = document.querySelector('.next')
     const date = new Date()
     next.innerHTML = `今天是${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
-
-    setInterval(function () {
+    function getBirthday() {
       const now = +new Date()
       const last = +new Date('2023-12-24 00:00:00')
       let time = (last - now) / 1000
@@ -109,7 +108,9 @@
       hour.innerHTML = h
       minutes.innerHTML = m
       scond.innerHTML = s
-    }, 1000)
+    }
+    getBirthday()
+    setInterval(getBirthday, 1000)
   </script>
 </body>
 
